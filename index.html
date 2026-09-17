@@ -1,9 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI活用状況アンケート | 京都試作ネット</title>
+
 <style>
   :root {
     --primary: #1a5276;
@@ -14,7 +16,11 @@
     --text: #2c3e50;
     --muted: #7f8c8d;
   }
-  * { box-sizing: border-box; }
+
+  * {
+    box-sizing: border-box;
+  }
+
   body {
     margin: 0;
     font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
@@ -22,26 +28,31 @@
     color: var(--text);
     line-height: 1.7;
   }
+
   .header {
     background: linear-gradient(135deg, var(--primary), var(--primary-light));
     color: #fff;
     padding: 32px 20px 28px;
     text-align: center;
   }
+
   .header h1 {
     margin: 0 0 8px;
     font-size: 1.5rem;
   }
+
   .header p {
     margin: 0;
     font-size: 0.9rem;
     opacity: 0.9;
   }
+
   .container {
     max-width: 680px;
     margin: -20px auto 40px;
     padding: 0 16px;
   }
+
   .card {
     background: var(--card-bg);
     border-radius: 10px;
@@ -49,22 +60,27 @@
     padding: 28px 24px;
     margin-bottom: 20px;
   }
+
   .intro-card p {
     margin: 0;
     color: var(--muted);
     font-size: 0.9rem;
   }
+
   fieldset {
     border: none;
     padding: 0;
     margin: 0 0 22px;
   }
-  legend, label.q-label {
+
+  legend,
+  label.q-label {
     display: block;
     font-weight: 700;
     margin-bottom: 10px;
     font-size: 0.98rem;
   }
+
   .required {
     color: #c0392b;
     font-size: 0.75rem;
@@ -72,11 +88,13 @@
     margin-left: 6px;
     vertical-align: middle;
   }
+
   .hint {
     color: var(--muted);
     font-size: 0.82rem;
     margin: -4px 0 10px;
   }
+
   input[type="text"],
   textarea {
     width: 100%;
@@ -88,22 +106,28 @@
     background: #fff;
     color: var(--text);
   }
+
   textarea {
     min-height: 80px;
     resize: vertical;
   }
+
   input[type="text"]:focus,
   textarea:focus {
     outline: none;
     border-color: var(--primary-light);
     box-shadow: 0 0 0 3px rgba(40,116,166,0.15);
   }
-  .radio-group, .checkbox-group {
+
+  .radio-group,
+  .checkbox-group {
     display: flex;
     flex-direction: column;
     gap: 8px;
   }
-  .radio-group label, .checkbox-group label {
+
+  .radio-group label,
+  .checkbox-group label {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -114,20 +138,26 @@
     border-radius: 6px;
     transition: background 0.15s, border-color 0.15s;
   }
-  .radio-group label:hover, .checkbox-group label:hover {
+
+  .radio-group label:hover,
+  .checkbox-group label:hover {
     background: #eef4f8;
     border-color: var(--primary-light);
   }
-  .radio-group input, .checkbox-group input {
+
+  .radio-group input,
+  .checkbox-group input {
     width: 16px;
     height: 16px;
     accent-color: var(--primary-light);
     flex-shrink: 0;
   }
+
   .other-text {
     margin-top: 6px;
     margin-left: 24px;
   }
+
   button[type="submit"] {
     width: 100%;
     padding: 14px;
@@ -140,26 +170,42 @@
     cursor: pointer;
     transition: background 0.15s;
   }
+
   button[type="submit"]:hover {
     background: var(--primary-light);
   }
+
   button[type="submit"]:disabled {
     background: #95a5a6;
     cursor: not-allowed;
   }
+
   #status-msg {
     margin-top: 14px;
     text-align: center;
     font-size: 0.9rem;
     display: none;
   }
-  #status-msg.success { color: #1e8449; display: block; }
-  #status-msg.error { color: #c0392b; display: block; }
+
+  #status-msg.success {
+    color: #1e8449;
+    display: block;
+  }
+
+  #status-msg.error {
+    color: #c0392b;
+    display: block;
+  }
+
   .thanks {
     text-align: center;
     padding: 40px 20px;
   }
-  .thanks h2 { color: var(--primary); }
+
+  .thanks h2 {
+    color: var(--primary);
+  }
+
   .section-num {
     display: inline-block;
     background: var(--primary);
@@ -174,6 +220,7 @@
   }
 </style>
 </head>
+
 <body>
 
 <div class="header">
@@ -184,73 +231,252 @@
 <div class="container">
 
   <div class="card intro-card">
-    <p>本アンケートは、京都試作ネット参加企業の皆さまが現在どのようにAIを活用されているか、また今後どのような活用や支援を必要とされているかを把握するためのものです。所要時間は3〜5分程度です。ご回答いただいた内容は集計の上、今後の勉強会・情報交換の企画に活用させていただきます。</p>
+    <p>
+      本アンケートは、京都試作ネット参加企業の皆さまが現在どのようにAIを活用されているか、
+      また今後どのような活用や支援を必要とされているかを把握するためのものです。
+      所要時間は3〜5分程度です。ご回答いただいた内容は集計の上、今後の勉強会・情報交換の企画に活用させていただきます。
+    </p>
   </div>
 
   <form id="survey-form" class="card">
 
     <fieldset>
-      <label class="q-label"><span class="section-num">1</span>会社名<span class="required">必須</span></label>
-      <input type="text" id="company" name="company" required placeholder="例）〇〇株式会社">
+      <label class="q-label">
+        <span class="section-num">1</span>会社名<span class="required">必須</span>
+      </label>
+      <input
+        type="text"
+        id="company"
+        name="company"
+        required
+        placeholder="例）〇〇株式会社"
+      >
     </fieldset>
 
     <fieldset>
-      <label class="q-label"><span class="section-num">2</span>ご担当者名</label>
-      <input type="text" id="contact" name="contact" placeholder="任意">
+      <label class="q-label">
+        <span class="section-num">2</span>ご担当者名
+      </label>
+      <input
+        type="text"
+        id="contact"
+        name="contact"
+        placeholder="任意"
+      >
     </fieldset>
 
     <fieldset>
-      <label class="q-label"><span class="section-num">3</span>現在、業務でAIを活用していますか？<span class="required">必須</span></label>
+      <label class="q-label">
+        <span class="section-num">3</span>現在、業務でAIを活用していますか？<span class="required">必須</span>
+      </label>
+
       <div class="radio-group" id="ai-status-group">
-        <label><input type="radio" name="ai_status" value="積極的に活用している" required>積極的に活用している</label>
-        <label><input type="radio" name="ai_status" value="一部の業務で活用している">一部の業務で活用している</label>
-        <label><input type="radio" name="ai_status" value="試験的に使い始めた">試験的に使い始めた</label>
-        <label><input type="radio" name="ai_status" value="検討中（まだ使っていない）">検討中（まだ使っていない）</label>
-        <label><input type="radio" name="ai_status" value="活用していない">活用していない</label>
-      </div>
-    </fieldset>
-
-    <fieldset>
-      <label class="q-label"><span class="section-num">4</span>活用方法はどのようなものですか？</label>
-      <p class="hint">当てはまるものすべてお選びください（活用されていない場合は空欄で結構です）</p>
-      <div class="checkbox-group" id="usage-group">
-        <label><input type="checkbox" name="usage" value="文章作成・要約（メール、資料など）">文章作成・要約（メール、資料など）</label>
-        <label><input type="checkbox" name="usage" value="画像・3Dモデル生成">画像・3Dモデル生成</label>
-        <label><input type="checkbox" name="usage" value="設計・CAD関連支援">設計・CAD関連支援</label>
-        <label><input type="checkbox" name="usage" value="プログラミング・ツール開発支援">プログラミング・ツール開発支援</label>
-        <label><input type="checkbox" name="usage" value="データ分析・解析">データ分析・解析</label>
-        <label><input type="checkbox" name="usage" value="翻訳・多言語対応">翻訳・多言語対応</label>
-        <label><input type="checkbox" name="usage" value="問い合わせ対応・チャットボット">問い合わせ対応・チャットボット</label>
-        <label><input type="checkbox" name="usage" value="営業・マーケティング支援">営業・マーケティング支援</label>
         <label>
-          <input type="checkbox" name="usage" value="その他" id="usage-other-check">その他
+          <input
+            type="radio"
+            name="ai_status"
+            value="積極的に活用している"
+            required
+          >
+          積極的に活用している
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="ai_status"
+            value="一部の業務で活用している"
+          >
+          一部の業務で活用している
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="ai_status"
+            value="試験的に使い始めた"
+          >
+          試験的に使い始めた
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="ai_status"
+            value="検討中（まだ使っていない）"
+          >
+          検討中（まだ使っていない）
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="ai_status"
+            value="活用していない"
+          >
+          活用していない
         </label>
       </div>
-      <input type="text" class="other-text" id="usage-other-text" placeholder="その他の内容をご記入ください" style="display:none;">
     </fieldset>
 
     <fieldset>
-      <label class="q-label" for="want-to-try"><span class="section-num">5</span>現在、AI活用で試してみたいことはありますか？</label>
-      <textarea id="want-to-try" name="want_to_try" placeholder="例）検図の自動チェック、見積もり作成の効率化 など"></textarea>
+      <label class="q-label">
+        <span class="section-num">4</span>活用方法はどのようなものですか？
+      </label>
+
+      <p class="hint">
+        当てはまるものすべてお選びください（活用されていない場合は空欄で結構です）
+      </p>
+
+      <div class="checkbox-group" id="usage-group">
+
+        <label>
+          <input
+            type="checkbox"
+            name="usage"
+            value="文章作成・要約（メール、資料など）"
+          >
+          文章作成・要約（メール、資料など）
+        </label>
+
+        <label>
+          <input
+            type="checkbox"
+            name="usage"
+            value="画像・3Dモデル生成"
+          >
+          画像・3Dモデル生成
+        </label>
+
+        <label>
+          <input
+            type="checkbox"
+            name="usage"
+            value="設計・CAD関連支援"
+          >
+          設計・CAD関連支援
+        </label>
+
+        <label>
+          <input
+            type="checkbox"
+            name="usage"
+            value="プログラミング・ツール開発支援"
+          >
+          プログラミング・ツール開発支援
+        </label>
+
+        <label>
+          <input
+            type="checkbox"
+            name="usage"
+            value="データ分析・解析"
+          >
+          データ分析・解析
+        </label>
+
+        <label>
+          <input
+            type="checkbox"
+            name="usage"
+            value="翻訳・多言語対応"
+          >
+          翻訳・多言語対応
+        </label>
+
+        <label>
+          <input
+            type="checkbox"
+            name="usage"
+            value="問い合わせ対応・チャットボット"
+          >
+          問い合わせ対応・チャットボット
+        </label>
+
+        <label>
+          <input
+            type="checkbox"
+            name="usage"
+            value="営業・マーケティング支援"
+          >
+          営業・マーケティング支援
+        </label>
+
+        <label>
+          <input
+            type="checkbox"
+            name="usage"
+            value="その他"
+            id="usage-other-check"
+          >
+          その他
+        </label>
+
+      </div>
+
+      <input
+        type="text"
+        class="other-text"
+        id="usage-other-text"
+        placeholder="その他の内容をご記入ください"
+        style="display:none;"
+      >
     </fieldset>
 
     <fieldset>
-      <label class="q-label" for="pain-points"><span class="section-num">6</span>業務の中で困っていること・課題に感じていることは？</label>
-      <textarea id="pain-points" name="pain_points" placeholder="AIに限らず、業務上の課題やお困りごとをご自由にお書きください"></textarea>
+      <label class="q-label" for="want-to-try">
+        <span class="section-num">5</span>現在、AI活用で試してみたいことはありますか？
+      </label>
+
+      <textarea
+        id="want-to-try"
+        name="want_to_try"
+        placeholder="例）検図の自動チェック、見積もり作成の効率化 など"
+      ></textarea>
     </fieldset>
 
     <fieldset>
-      <label class="q-label" for="future-usage"><span class="section-num">7</span>今後、こんな活用をしてみたい（構想・アイデア）</label>
-      <textarea id="future-usage" name="future_usage" placeholder="将来的に実現したいAI活用のアイデアがあればお書きください"></textarea>
+      <label class="q-label" for="pain-points">
+        <span class="section-num">6</span>業務の中で困っていること・課題に感じていることは？
+      </label>
+
+      <textarea
+        id="pain-points"
+        name="pain_points"
+        placeholder="AIに限らず、業務上の課題やお困りごとをご自由にお書きください"
+      ></textarea>
     </fieldset>
 
     <fieldset>
-      <label class="q-label" for="question-to-ask"><span class="section-num">8</span>「こんな活用ができるか聞いてみたい」ことがあれば</label>
-      <textarea id="question-to-ask" name="question_to_ask" placeholder="他社事例や技術的な相談など、質問したいことをご記入ください"></textarea>
+      <label class="q-label" for="future-usage">
+        <span class="section-num">7</span>今後、こんな活用をしてみたい（構想・アイデア）
+      </label>
+
+      <textarea
+        id="future-usage"
+        name="future_usage"
+        placeholder="将来的に実現したいAI活用のアイデアがあればお書きください"
+      ></textarea>
     </fieldset>
 
-    <button type="submit" id="submit-btn">回答を送信する</button>
+    <fieldset>
+      <label class="q-label" for="question-to-ask">
+        <span class="section-num">8</span>「こんな活用ができるか聞いてみたい」ことがあれば
+      </label>
+
+      <textarea
+        id="question-to-ask"
+        name="question_to_ask"
+        placeholder="他社事例や技術的な相談など、質問したいことをご記入ください"
+      ></textarea>
+    </fieldset>
+
+    <button type="submit" id="submit-btn">
+      回答を送信する
+    </button>
+
     <div id="status-msg"></div>
+
   </form>
 
   <div id="thanks" class="card thanks" style="display:none;">
@@ -261,69 +487,128 @@
 </div>
 
 <script>
-  // ▼▼▼ ここを、GASをウェブアプリとしてデプロイした後のURLに置き換えてください ▼▼▼
-  const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbw7CtDGfJeiDMLXWC7AbbvCbk0550cPVJHfHuxP26uo8zVkCjkn2sokwfjrdjeVn_Ux/exec";
-  // ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
 
+  // Google Apps Script WebアプリのURL
+  const GAS_ENDPOINT =
+    "https://script.google.com/macros/s/AKfycbw7CtDGfJeiDMLXWC7AbbvCbk0550cPVJHfHuxP26uo8zVkCjkn2sokwfjrdjeVn_Ux/exec";
+
+
+  // 「その他」の表示・非表示
   const otherCheck = document.getElementById('usage-other-check');
   const otherText = document.getElementById('usage-other-text');
+
   otherCheck.addEventListener('change', () => {
     otherText.style.display = otherCheck.checked ? 'block' : 'none';
   });
 
+
+  // フォーム関連
   const form = document.getElementById('survey-form');
   const statusMsg = document.getElementById('status-msg');
   const submitBtn = document.getElementById('submit-btn');
 
+
+  // 送信処理
   form.addEventListener('submit', async (e) => {
+
     e.preventDefault();
 
-    const usageChecked = Array.from(form.querySelectorAll('input[name="usage"]:checked'))
-      .map(el => el.value === 'その他' && otherText.value.trim()
-        ? `その他（${otherText.value.trim()}）`
-        : el.value);
 
+    // 活用方法を取得
+    const usageChecked = Array.from(
+      form.querySelectorAll('input[name="usage"]:checked')
+    ).map(el =>
+      el.value === 'その他' && otherText.value.trim()
+        ? `その他（${otherText.value.trim()}）`
+        : el.value
+    );
+
+
+    // 送信データ
     const payload = {
       timestamp: new Date().toISOString(),
-      company: document.getElementById('company').value.trim(),
-      contact: document.getElementById('contact').value.trim(),
-      ai_status: (form.querySelector('input[name="ai_status"]:checked') || {}).value || '',
-      usage: usageChecked.join('、'),
-      want_to_try: document.getElementById('want-to-try').value.trim(),
-      pain_points: document.getElementById('pain-points').value.trim(),
-      future_usage: document.getElementById('future-usage').value.trim(),
-      question_to_ask: document.getElementById('question-to-ask').value.trim()
+
+      company:
+        document.getElementById('company').value.trim(),
+
+      contact:
+        document.getElementById('contact').value.trim(),
+
+      ai_status:
+        (form.querySelector('input[name="ai_status"]:checked') || {}).value || '',
+
+      usage:
+        usageChecked.join('、'),
+
+      want_to_try:
+        document.getElementById('want-to-try').value.trim(),
+
+      pain_points:
+        document.getElementById('pain-points').value.trim(),
+
+      future_usage:
+        document.getElementById('future-usage').value.trim(),
+
+      question_to_ask:
+        document.getElementById('question-to-ask').value.trim()
     };
 
+
+    // 必須項目チェック
     if (!payload.company || !payload.ai_status) {
-      statusMsg.textContent = '必須項目（会社名・現在の活用状況）をご入力ください。';
+
+      statusMsg.textContent =
+        '必須項目（会社名・現在の活用状況）をご入力ください。';
+
       statusMsg.className = 'error';
+
       return;
     }
 
+
+    // 送信中表示
     submitBtn.disabled = true;
     submitBtn.textContent = '送信中...';
     statusMsg.style.display = 'none';
 
+
     try {
-      // GASへのCORS回避パターン: text/plainで送信
+
+      // GASへ送信
+      // no-corsを使用してブラウザ側のCORS制限を回避
       await fetch(GAS_ENDPOINT, {
         method: 'POST',
-        mode: 'cors',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8'
+        },
         body: JSON.stringify(payload)
       });
 
+
+      // 送信完了表示
       form.style.display = 'none';
       document.getElementById('thanks').style.display = 'block';
+
+
     } catch (err) {
-      statusMsg.textContent = '送信に失敗しました。時間をおいて再度お試しください。';
+
+      console.error(err);
+
+      statusMsg.textContent =
+        '送信に失敗しました。時間をおいて再度お試しください。';
+
       statusMsg.className = 'error';
+
       submitBtn.disabled = false;
       submitBtn.textContent = '回答を送信する';
+
     }
+
   });
+
 </script>
 
 </body>
 </html>
+```
